@@ -1,0 +1,3 @@
+#!/bin/bash
+/opt/src/kafka_2.10-0.8.2.1/bin/kafka-server-start.sh /opt/src/kafka_2.10-0.8.2.1/config/server.properties &
+#nohup /adv/kafka_2.10-0.8.2.1/bin/kafka-server-start.sh /adv/kafka_2.10-0.8.2.1/config/server.properties &

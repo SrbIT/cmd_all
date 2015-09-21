@@ -1,0 +1,2 @@
+#!/bin/bash
+storm kill AggregationClusterTopologyPayment -w 0

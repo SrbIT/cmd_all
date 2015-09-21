@@ -1,0 +1,2 @@
+#!/bin/bash
+storm jar /opt/src/topo-src/storm-aggregation-0.3.0-SNAPSHOT-jar-with-dependencies.jar storm.kafka.AggregationClusterTopologyAds /opt/src/topo-src/ads.properties
