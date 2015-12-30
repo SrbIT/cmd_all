@@ -34,6 +34,8 @@ mkdir -p /opt/src/src_bin && cd /opt/src/ && mv *gz /opt/src/src_bin/
 
 cp /opt/src/zookeeper-3.4.7/conf/zoo_sample.cfg /opt/src/zookeeper-3.4.7/conf/zoo.cfg
 
+mkdir -p /opt/src/logs_src/
+
 echo "# The number of milliseconds of each tick
 tickTime=2000
 # The number of ticks that the initial
@@ -83,5 +85,20 @@ autostart=true
 command=/opt/src/apache-storm-0.10.0/bin/storm logviewer
 autostart=true" >> /etc/supervisord.conf
 
+cp /opt/src/apache-storm-0.10.0/conf/storm.yaml /opt/src/apache-storm-0.10.0/conf/storm.yaml.bk
 
+echo "storm.zookeeper.servers:
+    - "localhost"
+#
+storm.local.dir: "/opt/src/apache-storm-0.10.0"
+# nimbus.host: "nimbus"
+nimbus.host: "localhost"
+supervisor.slots.ports:
+    - 6700
+    - 6701
+    - 6702
+    - 6703
+    - 6704
+drpc.servers:
+    - "localhost"" > /opt/src/apache-storm-0.10.0/conf/storm.yaml
 
